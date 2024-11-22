@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# env
+/.env
+/.env.development
+/.env.production
+/.env.qa
+/.env.staging
+
+# package lock
+/package-lock.json
+
+#config files
+/config
