@@ -23,7 +23,7 @@ app.use('/project', projectRouter);
 const startServer = async () => {
     try {
         await sequelize.authenticate();
-        await sequelize.sync({ force: true })
+        await sequelize.sync()
         console.log('Connection to database has been established successfully.');
         const port = process.env.PORT;
         app.listen(port, () => {

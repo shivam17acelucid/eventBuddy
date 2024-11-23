@@ -19,12 +19,6 @@ export const getEvents = async (req, res) => {
         const events = await Event.findAll({
             where: {
                 isActive: 1
-            },
-            include: {
-                model: Feedback,
-                where: {
-                    isActive: 1
-                }
             }
         });
         createResponse(res, { status: STATUS_CODES.OK, message: 'Success', response: events })
