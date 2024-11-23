@@ -1,4 +1,4 @@
-import Event, { Feedback } from "../../models/relation.js";
+import { Feedback, Event } from "../../models/relation.js";
 import { createResponse } from '../../middlewares/responseHandler.js';
 import { STATUS_CODES } from '../../utils/index.js';
 
