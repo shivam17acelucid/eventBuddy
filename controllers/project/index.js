@@ -15,8 +15,8 @@ export const getAllProjects = async (req, res) => {
 // Create a new project
 export const createProject = async (req, res) => {
     try {
-        const { name, description } = req.body;
-        const newProject = await Project.create({ name, description });
+        const { name, description, status } = req.body;
+        const newProject = await Project.create({ name, description, status });
         createResponse(res, { status: STATUS_CODES.CREATED, message: 'Success', response: newProject })
     } catch (error) {
         createResponse(res, { status: STATUS_CODES.INTERNAL_SERVER_ERROR, message: 'Failed to Create Projects', response: error.message })

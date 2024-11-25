@@ -14,6 +14,10 @@ const Project = sequelize.define('Project', {
     description: {
         type: DataTypes.TEXT,
         allowNull: true,
+    },
+    status: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     tableName: 'project',

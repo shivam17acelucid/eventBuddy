@@ -3,9 +3,9 @@ import { createResponse } from '../../middlewares/responseHandler.js'
 import { STATUS_CODES } from '../../utils/index.js';
 
 // Get all users
-export const getAllUsers = async (res) => {
+export const getAllUsers = async (req, res) => {
     try {
-        const users = await User.findAll();
+        const users = await User.findAll({ where: { isActive: 1 }, attributes: ['name', 'email', 'phoneNumber', 'gender', 'designation', 'id'] });
         createResponse(res, { status: STATUS_CODES.OK, message: 'Success', response: users })
     } catch (error) {
         createResponse(res, { status: STATUS_CODES.INTERNAL_SERVER_ERROR, message: 'Failed to Fetch Users', response: error.message })

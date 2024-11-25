@@ -28,7 +28,7 @@ export const getEvents = async (req, res) => {
 }
 
 export const deleteEvent = async (req, res) => {
-    let { eventId } = req.body;
+    let { eventId } = req.query;
     if (!eventId) return { status: STATUS_CODES.UNPROCESSABLE_ENTITY, message: 'Event Id Required' }
     try {
         await Event.update({ isActive: 0 }, {
